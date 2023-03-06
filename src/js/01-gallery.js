@@ -6,17 +6,18 @@ import { galleryItems } from "./gallery-items.js";
 const arrGallery = galleryItems
   .map(({ preview, original, description }) => {
     return `
-    <li>
-        <img
-        width = "320"
-        src="${preview}"
-        alt="${description}"
-        />
-    </li>`;
+    <div class="gallery__item">
+        <a class="gallery__link" href="javascript:void(0)">
+            <img
+            class="gallery__image"
+            src="${preview}"
+            data-source="${original}.jpg"
+            alt="${description}"
+            />
+        </a>
+    </div>`;
   })
   .join("");
 
 const gallery = document.querySelector(".gallery");
-const listGallerry = document.createElement("ul");
-listGallerry.insertAdjacentHTML("beforeend", arrGallery);
-gallery.appendChild(listGallerry);
+gallery.insertAdjacentHTML("beforeend", arrGallery);
