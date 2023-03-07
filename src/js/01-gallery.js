@@ -36,6 +36,15 @@ function clickGallerayItem(e) {
   const instance = basicLightbox.create(`
     <img src="${largeImg}" width="800" height="600">
 `);
-
   instance.show();
+
+  const handleEscape = (event) => {
+    if (event.key === "Escape") {
+      instance.close();
+    }
+  };
+  document.addEventListener("keydown", handleEscape);
+  // if (basicLightbox.visible()) {
+  //   document.removeEventListener("keydown", handleEscape);
+  // }
 }
