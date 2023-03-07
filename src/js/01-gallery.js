@@ -1,8 +1,5 @@
-// import * as basicLightbox from "basiclightbox";
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
-
-// console.log(galleryItems);
 
 const arrGallery = galleryItems
   .map(({ preview, original, description }) => {
@@ -31,7 +28,6 @@ function clickGallerayItem(e) {
     return;
   }
   const largeImg = e.target.dataset.source;
-  console.log(largeImg);
 
   const instance = basicLightbox.create(`
     <img src="${largeImg}" width="800" height="600">
