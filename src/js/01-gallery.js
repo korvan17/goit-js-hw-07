@@ -37,14 +37,12 @@ function clickGallerayItem(e) {
     <img src="${largeImg}" width="800" height="600">
 `);
   instance.show();
-
   const handleEscape = (event) => {
     if (event.key === "Escape") {
       instance.close();
+      document.removeEventListener("keydown", handleEscape);
+      return;
     }
   };
   document.addEventListener("keydown", handleEscape);
-  // if (basicLightbox.visible()) {
-  //   document.removeEventListener("keydown", handleEscape);
-  // }
 }
